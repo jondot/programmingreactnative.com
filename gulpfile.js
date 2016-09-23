@@ -6,7 +6,9 @@ var cleanCSS = require('gulp-clean-css');
 var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
 var pkg = require('./package.json');
-
+var ghPages = require('gulp-gh-pages');
+var rimraf = require('rimraf');
+var es = require("event-stream");
 // Set the banner content
 var banner = ['/*!\n',
     ' * Camerazoid - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
@@ -74,8 +76,29 @@ gulp.task('copy', function() {
         .pipe(gulp.dest('vendor/font-awesome'))
 })
 
+gulp.task('clean', function(cb){
+  rimraf('./dist', cb);
+})
+
+gulp.task('dist', ['clean'], function() {
+  return es.merge(
+    gulp.src('vendor/**/*').pipe(gulp.dest('dist/vendor')),
+    gulp.src('img/**/*').pipe(gulp.dest('dist/img')),
+    gulp.src('js/*.js').pipe(gulp.dest('dist/js')),
+    gulp.src('css/*.css').pipe(gulp.dest('dist/css')),
+    gulp.src('index.html').pipe(gulp.dest('dist'))
+  )
+});
+
+gulp.task('pages', ['dist'], function() {
+  return gulp.src('dist/**/*')
+    .pipe(ghPages());
+});
+
+gulp.task('deploy', ['pages'])
+
 // Run everything
-gulp.task('default', ['less', 'minify-css', 'minify-js', 'copy']);
+gulp.task('default', ['less', 'minify-css', 'minify-js', 'copy', 'dist']);
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
