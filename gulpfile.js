@@ -86,6 +86,7 @@ gulp.task('dist', ['clean'], function() {
     gulp.src('img/**/*').pipe(gulp.dest('dist/img')),
     gulp.src('js/*.js').pipe(gulp.dest('dist/js')),
     gulp.src('css/*.css').pipe(gulp.dest('dist/css')),
+    gulp.src('CNAME').pipe(gulp.dest('dist')),
     gulp.src('index.html').pipe(gulp.dest('dist'))
   )
 });
