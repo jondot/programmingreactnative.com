@@ -66,20 +66,34 @@
             </div>
         </div>
     </header>
-
     <section id="download" class="download bg-primary text-center">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
 
                   <h2>I'll ping you for updates.</h2>
-                          <form action="//programmingreactnative.us3.list-manage.com/subscribe/post?u=655a1c25909e38194bd81738f&amp;id=b60c9bb7da" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                              <input required value="" name="EMAIL" placeholder="your@email.com" class="subscribe-box btn btn-outline btn-xl page-scroll" />
+                      <div id="mc_embed_signup">
+                        <style type="text/css" media="screen">
+                          #mc_embed_signup div.mce_inline_error {
+                            margin:0;
+                            padding: 10px 10px;
+                            background:transparent;
+                            color: #B20941;
+                          }
+                        </style>
+                        <form action="//programmingreactnative.us3.list-manage.com/subscribe/post?u=655a1c25909e38194bd81738f&amp;id=b60c9bb7da" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                          <div class="mc-field-group">
+                            <input id="mc-EMAIL" required value="" name="EMAIL" placeholder="your@email.com" class="subscribe-box btn btn-outline btn-xl page-scroll required email" />
 
-                              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_655a1c25909e38194bd81738f_b60c9bb7da" tabindex="-1" value=""></div>
-                              <input type="submit" name="subscribe" value="Subscribe" class="subscribe-button btn btn-outline btn-xl page-scroll"/>
-                          </form>
+                            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_655a1c25909e38194bd81738f_b60c9bb7da" tabindex="-1" value=""></div>
+                            <input id="mc-embedded-subscribe" type="submit" name="subscribe" value="Subscribe" class="subscribe-button btn btn-outline btn-xl page-scroll"/>
+                          </div>
+                        </form>
+
+                          <div class="response" id="mce-error-response" style="display:none"></div>
+                          <div class="response" id="mce-success-response" style="display:none"></div>
+                      </div>
                 </div>
             </div>
         </div>
@@ -203,6 +217,7 @@
     </footer>
 
     <script src="vendor/jquery/jquery.min.js"></script>
+    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="vendor/typed.js/dist/typed.min.js"></script>
